@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume Converter</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #d7faaf;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        background-color: #a0f5a3;
+        padding: 40px;
+        width: 90%; /* Responsive width */
+        max-width: 400px; /* Max width for larger screens */
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .class-select {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      select {
+        width: 45%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 30%; /* Equal button width */
+      }
+      .convert {
+        background-color: #4caf50;
+        color: white;
+      }
+      .reset {
+        background-color: #f44336;
+        color: white;
+      }
+      .swap {
+        background-color: #2196f3;
+        color: white;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Volume Converter</h2>
+      <div class="header">
+        <h3>From</h3>
+        <h3>To</h3>
+      </div>
+
+      <div class="class-select">
+        <select id="from-class" name="from-class">
+          <option value="1">Liters</option>
+          <option value="2">Milliliters</option>
+          <option value="3">Gallons</option>
+          <option value="4">Cups</option>
+        </select>
+        <select id="to-class" name="to-class">
+          <option value="1">Liters</option>
+          <option value="2">Milliliters</option>
+          <option value="3">Gallons</option>
+          <option value="4">Cups</option>
+        </select>
+      </div>
+      <h4>Enter Volume</h4>
+      <input type="text" id="volume-input" placeholder="Volume" />
+      <div class="button-group">
+        <button class="convert" onclick="convert()">Convert</button>
+        <button class="reset" onclick="reset()">Reset</button>
+        <button class="swap" onclick="swap()">Swap</button>
+      </div>
+      <div class="result">
+        <h4>Converted Volume:</h4>
+        <input
+          type="text"
+          id="converted-output"
+          placeholder="Converted Volume"
+          readonly
+        />
+      </div>
+      <div class="result">
+        <h4>Calculation:</h4>
+        <input
+          type="text"
+          id="calculation-output"
+          placeholder="Calculation Result"
+          readonly
+        />
+      </div>
+    </div>
+    <script src="js.4ps.js"></script>
+  </body>
+</html>

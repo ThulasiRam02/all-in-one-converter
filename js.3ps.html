@@ -1,0 +1,344 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #d7faaf;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        background-color: #a0f5a3;
+        padding: 40px;
+        width: 400px;
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .class-select {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      select {
+        width: 45%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .convert {
+        background-color: #4caf50;
+        color: white;
+      }
+      .reset {
+        background-color: #f44336;
+        color: white;
+      }
+      .swap {
+        background-color: #2196f3;
+        color: white;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Temperature Converter</h2>
+      <div class="header">
+        <h3>From</h3>
+        <h3>To</h3>
+      </div>
+      <div class="class-select">
+        <select id="from-class" name="from-class">
+          <option value="">Temperature</option>
+          <option value="1">Celsius</option>
+          <option value="2">Fahrenheit</option>
+          <option value="3">Kelvin</option>
+        </select>
+        <select id="to-class" name="to-class">
+          <option value="">Temperature</option>
+          <option value="1">Celsius</option>
+          <option value="2">Fahrenheit</option>
+          <option value="3">Kelvin</option>
+        </select>
+      </div>
+      <h4>Enter Temperature</h4>
+      <input type="text" class="decimal-input" placeholder="Temperature" />
+      <div class="button-group">
+        <button class="convert">Convert</button>
+        <button class="reset">Reset</button>
+        <button class="swap">Swap</button>
+      </div>
+      <div class="result">
+        <h4>Converted Temperature:</h4>
+        <input type="text" class="result-input" placeholder="Converted Temperature" readonly />
+      </div>
+      <div class="result">
+        <h4>Calculation:</h4>
+        <input type="text" class="calculation-input" placeholder="Calculation Result" readonly />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #d7faaf;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        background-color: #a0f5a3;
+        padding: 40px;
+        width: 90%; /* Responsive width */
+        max-width: 400px; /* Max width for larger screens */
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .class-select {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      select {
+        width: 45%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 30%; /* Equal button width */
+      }
+      .convert {
+        background-color: #4caf50;
+        color: white;
+      }
+      .reset {
+        background-color: #f44336;
+        color: white;
+      }
+      .swap {
+        background-color: #2196f3;
+        color: white;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Temperature Converter</h2>
+      <div class="header">
+        <h3>From</h3>
+        <h3>To</h3>
+      </div>
+      <div class="class-select">
+        <select id="from-class" name="from-class">
+          <option value="">Temperature</option>
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+        <select id="to-class" name="to-class">
+          <option value="">Temperature</option>
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+      </div>
+      <h4>Enter Temperature</h4>
+      <input type="text" id="temperature-input" placeholder="Temperature" />
+      <div class="button-group">
+        <button class="convert" onclick="convert()">Convert</button>
+        <button class="reset" onclick="reset()">Reset</button>
+        <button class="swap" onclick="swap()">Swap</button>
+      </div>
+      <div class="result">
+        <h4>Converted Temperature:</h4>
+        <input
+          type="text"
+          id="converted-output"
+          placeholder="Converted Temperature"
+          readonly
+        />
+      </div>
+      <div class="result">
+        <h4>Calculation:</h4>
+        <input
+          type="text"
+          id="calculation-output"
+          placeholder="Calculation Result"
+          readonly
+        />
+      </div>
+    </div>
+    <script>
+      function convert() {
+        const fromClass = document.getElementById("from-class").value;
+        const toClass = document.getElementById("to-class").value;
+        const input = parseFloat(
+          document.getElementById("temperature-input").value
+        );
+        const convertedOutput = document.getElementById("converted-output");
+        const calculationOutput = document.getElementById("calculation-output");
+
+        if (isNaN(input)) {
+          alert("Please enter a valid temperature.");
+          return;
+        }
+
+        let convertedTemp;
+        let calculationText;
+
+        // Temperature conversion logic
+        if (fromClass === "Celsius") {
+          if (toClass === "Fahrenheit") {
+            convertedTemp = (input * 9) / 5 + 32;
+            calculationText = `${input}°C = ${convertedTemp.toFixed(2)}°F`;
+          } else if (toClass === "Kelvin") {
+            convertedTemp = input + 273.15;
+            calculationText = `${input}°C = ${convertedTemp.toFixed(2)}K`;
+          } else {
+            convertedTemp = input;
+            calculationText = `${input}°C = ${convertedTemp.toFixed(2)}°C`;
+          }
+        } else if (fromClass === "Fahrenheit") {
+          if (toClass === "Celsius") {
+            convertedTemp = ((input - 32) * 5) / 9;
+            calculationText = `${input}°F = ${convertedTemp.toFixed(2)}°C`;
+          } else if (toClass === "Kelvin") {
+            convertedTemp = ((input - 32) * 5) / 9 + 273.15;
+            calculationText = `${input}°F = ${convertedTemp.toFixed(2)}K`;
+          } else {
+            convertedTemp = input;
+            calculationText = `${input}°F = ${convertedTemp.toFixed(2)}°F`;
+          }
+        } else if (fromClass === "Kelvin") {
+          if (toClass === "Celsius") {
+            convertedTemp = input - 273.15;
+            calculationText = `${input}K = ${convertedTemp.toFixed(2)}°C`;
+          } else if (toClass === "Fahrenheit") {
+            convertedTemp = ((input - 273.15) * 9) / 5 + 32;
+            calculationText = `${input}K = ${convertedTemp.toFixed(2)}°F`;
+          } else {
+            convertedTemp = input;
+            calculationText = `${input}K = ${convertedTemp.toFixed(2)}K`;
+          }
+        }
+
+        convertedOutput.value = convertedTemp.toFixed(2); // Show converted temperature
+        calculationOutput.value = calculationText; // Show calculation result
+      }
+
+      function reset() {
+        document.getElementById("temperature-input").value = "";
+        document.getElementById("converted-output").value = "";
+        document.getElementById("calculation-output").value = "";
+        document.getElementById("from-class").selectedIndex = 0;
+        document.getElementById("to-class").selectedIndex = 0;
+      }
+
+      function swap() {
+        const fromClass = document.getElementById("from-class");
+        const toClass = document.getElementById("to-class");
+
+        // Swap the selected options
+        const temp = fromClass.value;
+        fromClass.value = toClass.value;
+        toClass.value = temp;
+      }
+    </script>
+  </body>
+</html>

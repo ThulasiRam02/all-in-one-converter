@@ -1,0 +1,198 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      header {
+        /* Add your header styles here */
+        font-family: Arial, sans-serif; /* Example font-family */
+      }
+      body {
+        background-color: rgb(94, 89, 89);
+        font-family: "Kalnia Glaze", serif;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 30px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.2s;
+        margin-top: 20px;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .card h3 {
+        margin: 15px 0;
+      }
+
+      .card p {
+        color: #555;
+      }
+
+      .A {
+        height: 30px;
+        width: 90px;
+        font-size: 20px;
+        background-color: rgb(221, 24, 139);
+        color: white;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://preview.redd.it/scientists-say-theyve-found-where-the-suns-magnetic-field-v0-l4henzjjg32d1.jpeg?width=640&crop=smart&auto=webp&s=a0d5dd00c770b2fe2b081c90020125b735035bf3"
+        alt="Card Image"
+      />
+      <h3>Length</h3>
+      <button class="A">click me</button>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://www.researchgate.net/publication/373090141/figure/fig3/AS:11431281211906838@1702505280033/Illustration-of-weight-calculations-for-different-dimensions.tif"
+        alt="Card Image"
+      />
+      <h3>Weight</h3>
+      <button class="A">click me</button>
+    </div>
+
+    <div class="card">
+      <img
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhISEhMWFhUWGBkYFxgVEhgXGBgXFxcYGBkYFhoYHSggGBslGxcYIzElJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGhAQGi0lICYtLS0tLjcwLy0uLSstLSsrLS0uLzUtLS0tMi8tLS0rLS0tLy0rKy8tLS01LS0tLSsrLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwQCBQYBB//EAEMQAAEDAQQFCgMECQQDAQAAAAEAAhEDBBIhMQUTQVFxBiIyM2FygZGxwQehshQjUtEVJEJDYpLCw/BTguHxc5PiZP/EABsBAQACAwEBAAAAAAAAAAAAAAABBQIEBgMH/8QAMhEBAAIBAQUHAwMFAQEBAAAAAAECEQMEBRIhMRMyQUJxgcEUUWEikaEVM7HR8OEkI//aAAwDAQACEQMRAD8A+lKUCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICCO0F906sNc/YHuLWnHa4NcRhOwoNBZtO2h9Ozv1NAOryWg2l90NDL8udqZvYRAEdqCZ+n3NfaKbqYvUqTXtu1JFR5a0uYJaIAc+mAdt/IIKjeVTywVRRbq22Wz2mp96bwbX1nNpt1cPLdWcy2ZAwRKxX07VbTtdbVUtXZxXj792seaAdm3Vw0OLc7xjtQS/pqoG2kPpM1lFrHNDKpcx5qhwpsvFgLXFzYIgwHNOMwiGDNM13mymnRpXa7Z59oe1zHBl57SBSIMQRniRsRKWnpyRQOr62vXo9Lo6kWg3ssZ1GWy9tjEhRo8p6hoio6jTDn0aNam0VyW3az2sDah1YLCC4ZB0wdyhLf2J7y2agYHScKdQ1Gxs5zmtM+ClCwgICAgICAgICAgICAgICAgICAgBBzbtCVBRsTDSo1jQBD21HwwzTLZaTTdJBO0BAr6BqPrMq/dtGsYXtBJim2nTJY3mj99QpbBLQcslCWOg+TOrNJ1dlJ5p2WyUWmL12pZ9aXubeGAl7IOeGyEQwtOgqrqdtpijQDq7bSG1r5v/AHwdcDxqpgSAeccBtyQS1OTkOcymGU6D32d7m0yaZDqJe5zmhogOLm0BOEhp3YhY0dod9J1IXgWU6td7SXFziysHOAJIxIe9wzyAUiCzaHrB9JrtXq6Na0VmvDyXP1wrBrSy7DYFd0m8egIzwClQ5KOp2dtKmyiCbPQZVaOaypWovY4udDMZAeLxE4iQg6XRtItZBpU6WJ5lJ0t49BuJ4ILaAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICCG217lOo+Jutc6N90E+y9NKnHetfvMQw1b8FLW+0NLVtVop2U13VGPv06TmAsgtfULZGAgtDXbTMhWMaOz6mv2UVmMTOfzEfKu7bXpodrMxOYjH4mXr7bWY91E1LxZaqNIvuNBcyqCSIyBwKyjZ9K0ReIxmlpxnxhE7Rq0maTOcWiM/iTTNurNq1BTeGtp2fXQWB14ioGkE5iQfksNk0NK+lWbxmZtw9enJltWvq01Zik8orn+W8ovvNa78TWu/maD7qtvXhtNftKxpbirFvuzWLIQabSNes+0fZ6NQUyKLqslgdeN8Ma0yDDZOJGKmGprX1J1OzpOOWVHSOla7H13B7Q2zus7XMDJFQ1RLzedzmgHJTh46mvqRa057uIx989UjtJ1tdevjV/bRZNXcGUAGpezmTlkmCdo1OPOeXFw4bLQFpfUoh7zLr9QZAYNeQMuxRLa2a9r0zb7y2Kh7iCGvUgsxwLgHcCtDb9e+hFL1nlxYn0bOzaddTiieuOSClXddcScWsJOA6V4BvyKqtPeOvOnNrTzitpn1z+lu32XTi0REdZjHpjm9NVwa
+    </div>    
+  </body>      
+
+ 
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome to my web page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      .card {
+        margin: 15px;
+        border: 3px solid #ddd;
+        border-radius: 8px;
+      }
+      .card img {
+        border-radius: 8px 8px 0 0;
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .but {
+        color: white;
+        background-color: rgb(182, 16, 52);
+        text-align: center;
+        border-color: aquamarine;
+        border-radius: 8px;
+      }
+      .mb-4 {
+        font-family: "Oleo Script", system-ui;
+        text-align: center;
+        color: rgb(103, 103, 168);
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="mb-4">Welcome To My Web page</h1>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="https://www.vedantu.com/seo/content-images/b708732b-161c-428a-8f75-153678864a7c.png"
+              class="card-img-top"
+              alt="Card Image 1"
+            />
+            <div class="card-body">
+              <h2 class="card-title">Kilometer</h2>
+              <p class="card-text"></p>
+              <button class="but" id="ram"><a href="./js.1ps.html">click hear</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="https://www.researchgate.net/publication/373090141/figure/fig3/AS:11431281211906838@1702505280033/Illustration-of-weight-calculations-for-different-dimensions.tif"
+              class="card-img-top"
+              alt="Card Image 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Length</h5>
+              <p class="card-text"></p>
+              <button class="but" id="ram"><a href="./js.2ps.html">click hear</a></button>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="https://as1.ftcdn.net/v2/jpg/02/41/20/66/1000_F_241206692_5OwzrwrXOWTHCd2AW27J2RxoDUNzaCiV.jpg"
+              class="card-img-top"
+              alt="Card Image 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Temperature</h5>
+              <p class="card-text"></p>
+              <button class="but" id="ram"><a href="./js.3ps.html">click hear</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="https://hips.hearstapps.com/hmg-prod/images/blue-flask-and-beaker-isolated-on-white-with-royalty-free-image-1669653995.jpg"
+              class="card-img-top"
+              alt="Card Image 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Valume</h5>
+              <p class="card-text"></p>
+              <button class="but" id="ram"><a href="./js.1ps.html">click hear</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js.1ps.js"></script>
+    <windeo.open>
+  </body>
+</html>
